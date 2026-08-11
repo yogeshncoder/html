@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>welcome to Github</title>
+<style>
+.coloring
+{
+background:#a1a2f3;
+color:#2f4f4f;
+}
+</style>
+<script>
+
+function view(){
+
+var uservalue="yogesh";
+var passvalue="yogesh@123";
+
+
+var unm=document.getElementById("user").value;
+
+if(unm != uservalue){
+alert("Invalid username!!!");
+event.preventDefault();
+return false;
+}
+
+var psd=document.getElementById("pass").value;
+
+if(psd != passvalue){
+alert("Invalid pasword!!!");
+event.preventDefault();
+return false;
+}
+
+	localStorage.setItem("unm", unm);
+
+       	alert("Login successful!");
+        return true;
+
+}
+
+</script>
+</head>
+<center>
+<form action="see.html">
+<body class="coloring">
+<h1>Login to Github</h1>
+<table border="5" cellspacing=0.75 cellpadding=2 >
+
+<tr>
+<td><label>Username : </td>
+<td><input type="text" id="user" name="user" onkeydown="return /[a-z\s]/i.test(event.key)"></td>
+</tr>
+
+<tr>
+<td><label>Password : </td>
+<td><input type="password" id="pass" name="pass"></td>
+</tr>
+
+<tr>
+<td colspan="2" align="center">
+<input type="submit" value="Login" onclick="view()">
+<input type="reset" value="reset">
+</td>
+</tr>
+
+</table>
+</form>
+</center>
+</body>
+</html>
