@@ -1,0 +1,164 @@
+<html>
+<head>
+<title>Registration form</title>
+<style>
+
+.coloring
+{
+background:lavenderblush;
+color:purple;
+}
+
+</style>
+<script>
+
+function show(){
+
+var fname=document.getElementById("fname").value;
+
+localStorage.setItem("fname",fname);
+
+var nme=fname.match(/[a-zA-Z\s]+$/);
+if(!nme){
+alert("Enter valid first name!!!");
+return false;
+}
+
+
+var mn=document.getElementById("mn").value;
+
+
+localStorage.setItem("mn",mn);
+
+
+var mne=mn.match(/[a-zA-Z]?/);
+if(mne){
+alert("Enter valid middle name!!!");
+return false;
+}
+
+var ln=document.getElementById("ln").value;
+
+localStorage.setItem("ln",ln);
+
+var nmer=ln.match(/[a-zA-Z]+/);
+if(nmer){
+alert("Enter valid last name!!!");
+return false;
+}
+
+var mob=document.getElementById("mob").value;
+var mobe=mob.match(/[0-9]{10}s/);
+if(!mobe){
+alert("Enter valid mobile number");
+}
+
+localStorage.setItem("mob",mob);
+
+var namp=mob.match(/[0-9]{10}/);
+if(!namp){
+alert("Enter valid Mobile number!!!");
+return false;
+}
+
+var em=document.getElementById("em").value;
+
+localStorage.setItem("em",em);
+
+var namj=em.match(/[a-zA-Z0-9]+@[a-zA-Z]+.[a-zA-Z]+/);
+if(!namj){
+alert("Enter valid E-mail!!!");
+return false;
+}
+
+var ad=document.getElementById("ad").value;
+localStorage.setItem("ad",ad);
+
+var namy=ad.match(/[a-zA-Z]+/);
+if(!namy){
+alert("Enter valid address!!!");
+return false;
+}
+
+
+var dt=document.getElementById("date").value;
+
+localStorage.setItem("dt",dt);
+
+
+
+
+var gen=document.forms['reg'].gender.value;
+alert(gen);
+
+}
+
+</script>
+</head>
+
+<body>
+<body class="coloring">
+<center>
+<form action="details.html">
+<h2>Enter your details<h2>
+<table border="5" cellpadding=2 cellspacing=1>
+
+<tr>
+<td><label>First name:</label></td>
+<td><input type="text" name="fname" id="fname" onkeydown="return /[a-z\s]/i.test(event.key)"></td>
+</tr>
+
+<tr>
+<td><label>Middle name:</label></td>
+<td><input type="text" name="mn" id="mn"></td>
+</tr>
+
+
+<tr>
+<td><label>Last name:</label></td>
+<td><input type="text" name="ln" id="ln"></td>
+</tr>
+
+
+<tr>
+<td><label>Mobile number:</label></td>
+<td><input type="number" name="mob" id="mob"></td>
+</tr>
+
+
+<tr>
+<td><label>E-mail :</label></td>
+<td><input type="email" name="em" id="em"></td>
+</tr>
+
+
+<tr>
+<td><label>DOB : </label></td>
+<td><input type="date" name="date" id="date">
+</tr>
+
+
+<tr>
+<td><label>Address :</label></td>
+<td><textarea name="ad" id="ad" > </textarea></td>
+</tr>
+
+<tr>
+<td>Gender </td>
+<td><input type="radio" name="gender" value="male" checked >Male
+<input type="radio" name="gender" value="female">Female
+</tr>
+
+<tr>
+<td colspan="2" align="center">
+
+<input type="submit" value="submit" onclick="show()">
+
+</td>
+</tr>
+
+</form>
+</table>
+</center>
+</body>
+</html>
